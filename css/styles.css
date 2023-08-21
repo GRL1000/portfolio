@@ -453,7 +453,7 @@ span {
 
 .skills h2 {
     display: inline-block;
-    left: 40%;
+    left: 30%;
     transform: translateX(-50);
 }
 
@@ -571,7 +571,7 @@ span {
 
 .contact h2 {
     display: inline-block;
-    left: 35%;
+    left: 20%;
     transform: translateX(-50);
 }
 
