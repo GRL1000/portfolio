@@ -17,6 +17,8 @@
     --text-color: #EDEDED;
     --main-color: #00ABF0;
     --hov-color: #0281b3;
+    --thumb-color: #0281b3;
+    --track-color: #00ABF0;
     
 }
 
@@ -940,41 +942,50 @@ section:nth-child(odd) .animate.show-scroll,
 }
 
 /* Scroll */
-body::-webkit-scrollbar { 
-    width: 9px; height: 9px;
+@media (min-width: 768px) {
+    body::-webkit-scrollbar { 
+        width: 9px; height: 9px;
+    }
+    
+    body::-webkit-scrollbar-button { 
+        width: 0px; height: 0px;
+    }
+    
+    body::-webkit-scrollbar-thumb { 
+        background: transparent; border: 0px none var(--bg-color); 
+        border-radius: 10px;
+    }
+    
+    body::-webkit-scrollbar-thumb:hover { 
+        background: var(--hov-color);
+    }
+    
+    body::-webkit-scrollbar-thumb:active { 
+        background: var(--main-color);
+    }
+    
+    body::-webkit-scrollbar-track {
+        background: transparent;
+        border: 0px solid #aaa; 
+        border-radius: 5px;
+    }
+    
+    body::-webkit-scrollbar-track:hover { 
+        background: var(--bg-color);
+    }
+    
+    body::-webkit-scrollbar-track:active { 
+        background: var(--bg-color);
+    }
+    
+    body::-webkit-scrollbar-corner { 
+        background: transparent;
+    }
 }
 
-body::-webkit-scrollbar-button { 
-    width: 0px; height: 0px;
-}
-
-body::-webkit-scrollbar-thumb { 
-    background: transparent; border: 0px none var(--bg-color); 
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb:hover { 
-    background: var(--hov-color);
-}
-
-body::-webkit-scrollbar-thumb:active { 
-    background: var(--main-color);
-}
-
-body::-webkit-scrollbar-track {
-    background: transparent;
-    border: 0px solid #aaa; 
-    border-radius: 5px;
-}
-
-body::-webkit-scrollbar-track:hover { 
-    background: var(--bg-color);
-}
-
-body::-webkit-scrollbar-track:active { 
-    background: var(--bg-color);
-}
-
-body::-webkit-scrollbar-corner { 
-    background: transparent;
+@media (max-width: 767px) {
+    body {
+        overflow-y: scroll;
+        scrollbar-width: thin;
+    }
 }
